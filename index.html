@@ -202,7 +202,7 @@
               <h1 class="govbb-text-h1">Calculate your severance pay</h1>
               <p class="govbb-text-body">
                 If you lost your job, your employer may have to pay you money.
-                This tool gives you an estimate.
+                This tool gives you a quick estimate.
               </p>
             </div>
 
@@ -212,32 +212,30 @@
             </p>
             <ol class="govbb-list govbb-list--number">
               <li>
-                You worked for the same employer for at least 2 years (104
-                weeks).
+                You worked for the same employer for at least 2 years (104 weeks).
               </li>
               <li>You were aged 16 to 64 on your last day at work.</li>
               <li>
-                You lost your job because of redundancy, a natural disaster, or
-                being kept on lay-off or short-time.
+                You lost your job because your job was cut (redundancy), a natural disaster, or lay-off or short-time.
               </li>
             </ol>
             <p class="govbb-text-body">
               It may not help if:
             </p>
             <ol class="govbb-list govbb-list--number">
-              <li>You were dismissed because of your conduct.</li>
+              <li>You were fired because of your behaviour.</li>
               <li>
                 You turned down a similar job from the same employer.
               </li>
               <li>
-                Your job type is excluded.
+                Your job type is not covered.
               </li>
             </ol>
 
             <h2 class="govbb-text-h2">When to use this tool</h2>
             <p class="govbb-text-body">
               You can use it any time.
-              If you want to claim, do it within 12 months of your last day at work.
+              If you want to ask for this money, do it within 12 months of your last day at work.
             </p>
 
             <h2 class="govbb-text-h2">How to get an estimate</h2>
@@ -265,9 +263,9 @@
 
             <h2 class="govbb-text-h2">After you get your estimate</h2>
             <p class="govbb-text-body">
-              This is an estimate of the minimum amount.
+              This is a quick estimate.
+              It may be the minimum amount.
               Your contract may give you more.
-              Your employer should pay within 2 months.
             </p>
             <p class="govbb-text-body">
               If they do not pay, contact the Ministry of Labour.
@@ -429,7 +427,7 @@
                       class="govbb-radio-item__label"
                       for="reason-misconduct"
                     >
-                      I was dismissed because of my conduct
+                      I was fired because of my behaviour
                     </label>
                   </div>
 
@@ -592,13 +590,13 @@
               >
               <h1 class="govbb-text-h1">What is your usual pay?</h1>
               <p class="govbb-text-body">
-                Tell us how much you usually earn.
+                Tell us how much you are paid.
               </p>
             </div>
 
             <div class="form-page__groups">
               <div class="govbb-form-group" id="fg-pay">
-                <label class="govbb-label" for="pay">Amount in BDS$</label>
+                <label class="govbb-label" for="pay">Amount (BDS$)</label>
                 <p class="govbb-hint" id="pay-hint">For example, 1200.00</p>
                 <p
                   class="govbb-error-message"
@@ -684,7 +682,7 @@
               >
               <h1 class="govbb-text-h1">Check your answers</h1>
               <p class="govbb-text-body">
-                Make sure your answers are correct before you see the estimate.
+                Check your answers before you see the estimate.
               </p>
             </div>
 
@@ -922,7 +920,7 @@
             redundancy: "My job was cut (redundancy)",
             disaster: "A natural disaster damaged the workplace",
             layoff: "No work or big cut in hours for many weeks",
-            misconduct: "I was dismissed because of my conduct",
+            misconduct: "I was fired because of my behaviour",
             refused: "I turned down a similar job from the same employer",
             other: "None of these",
           }[v] || "—"
@@ -1006,7 +1004,7 @@
             '<div class="estimate-card">' +
             '<p class="govbb-text-h2 estimate-card__amount">You may not be owed severance pay</p>' +
             '<p class="estimate-card__meta">Based on what you told us</p>' +
-            '<p class="govbb-text-body" style="margin-top: var(--spacing-m)">If you were dismissed because of your conduct, you may not be owed severance pay. If you are not sure, contact the Ministry of Labour.</p>' +
+            '<p class="govbb-text-body" style="margin-top: var(--spacing-m)">If you were fired because of your behaviour, you may not be owed severance pay. If you are not sure, contact the Ministry of Labour.</p>' +
             "</div>";
           go("result");
           return;
@@ -1017,7 +1015,7 @@
             '<div class="estimate-card">' +
             '<p class="govbb-text-h2 estimate-card__amount">You may not be owed severance pay</p>' +
             '<p class="estimate-card__meta">Based on what you told us</p>' +
-            '<p class="govbb-text-body" style="margin-top: var(--spacing-m)">If you turned down a similar job from the same employer, you may not be owed severance pay. If you are not sure, contact the Ministry of Labour.</p>' +
+            '<p class="govbb-text-body" style="margin-top: var(--spacing-m)">If you said no to a similar job from the same employer, you may not be owed severance pay. If you are not sure, contact the Ministry of Labour.</p>' +
             "</div>";
           go("result");
           return;
@@ -1028,7 +1026,7 @@
             '<div class="estimate-card">' +
             '<p class="govbb-text-h2 estimate-card__amount">We cannot give you an estimate</p>' +
             '<p class="estimate-card__meta">Based on what you told us</p>' +
-            '<p class="govbb-text-body" style="margin-top: var(--spacing-m)">This tool only covers redundancy, natural disaster, and lay-off or short-time. Contact the Ministry of Labour to check your case.</p>' +
+            '<p class="govbb-text-body" style="margin-top: var(--spacing-m)">This tool only covers jobs cut (redundancy), natural disaster, and lay-off or short-time. Contact the Ministry of Labour to check your case.</p>' +
             "</div>";
           go("result");
           return;
@@ -1039,7 +1037,7 @@
             '<div class="estimate-card">' +
             '<p class="govbb-text-h2 estimate-card__amount">You may not qualify yet</p>' +
             '<p class="estimate-card__meta">Based on what you told us</p>' +
-            '<p class="govbb-text-body" style="margin-top: var(--spacing-m)">You usually need at least 2 years (104 weeks) with the same employer. If you are close to 2 years, contact the Ministry of Labour to check.</p>' +
+            '<p class="govbb-text-body" style="margin-top: var(--spacing-m)">You usually need at least 2 years (104 weeks) with the same employer. If you are close to 2 years, contact the Ministry of Labour.</p>' +
             "</div>";
           go("result");
           return;
@@ -1090,7 +1088,7 @@
 
         wrap.innerHTML =
           '<div class="confirmation" role="status">' +
-          '<h2 class="govbb-text-h2">Estimated severance pay</h2>' +
+          '<h2 class="govbb-text-h2">Your severance pay estimate</h2>' +
           '<p style="font-size:var(--font-size-display); font-weight:700; margin-top: var(--spacing-xs)">' +
           money(total) +
           "</p>" +
@@ -1120,7 +1118,7 @@
           capNote +
           breakdownHtml +
           '<p class="govbb-text-body small" style="margin-top: var(--spacing-m)">' +
-          "This is an estimate of the minimum amount. Your contract may give you more." +
+          "This is a quick estimate. It may be the minimum amount. Your contract may give you more." +
           "</p>" +
           '<p class="govbb-text-body small">' +
           "Your employer should pay within 2 months. If they do not pay, contact the Ministry of Labour." +
@@ -1132,7 +1130,7 @@
             '<ol class="govbb-list govbb-list--number">' +
             "<li>Write to your employer and ask them to pay you. Keep a copy.</li>" +
             "<li>If they do not pay, contact the Ministry of Labour.</li>" +
-            "<li>If you want to claim, do it within 12 months of your last day.</li>" +
+            "<li>Ask within 12 months of your last day at work.</li>" +
             "</ol>";
         }
 
