@@ -238,21 +238,23 @@
               If you want to ask for this money, do it within 12 months of your last day at work.
             </p>
 
-            <h2 class="govbb-text-h2">How to get an estimate</h2>
-            <p class="govbb-text-body">
-              It takes about 3 minutes. We will ask you:
-            </p>
+            <h2 class="govbb-text-h2">What you will need</h2>
+            <p class="govbb-text-body">Before you start, make sure you know:</p>
             <ol class="govbb-list govbb-list--number">
-              <li>Why you lost your job</li>
-              <li>How many complete years you worked there</li>
-              <li>How much you are paid</li>
+              <li>Why you lost your job.</li>
+              <li>How many complete years you worked for your employer.</li>
+              <li>Your usual pay each week, or each month.</li>
             </ol>
+
+            <h2 class="govbb-text-h2">How long does it take?</h2>
+            <p class="govbb-text-body">It takes about 3 minutes.</p>
+
             <p>
               <a
               class="govbb-btn"
-              href="#start"
+              href="#q-reason"
               onclick="
-                go('start');
+                go('q-reason');
                 return false;
               "
               data-start-link
@@ -270,49 +272,6 @@
             <p class="govbb-text-body">
               If they do not pay, contact the Ministry of Labour.
             </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- ───────────────── START PAGE ───────────────── -->
-      <section class="panel" id="panel-start" data-active="false">
-        <div class="govbb-container">
-          <div class="form-page">
-            <div class="form-page__heading">
-              <span class="form-page__service-title govbb-text-body"
-                >Calculate your severance pay</span
-              >
-              <h1 class="govbb-text-h1">Before you start</h1>
-              <p class="govbb-text-body">
-                Answer all 3 questions in one go.
-                You cannot save your answers and come back later.
-              </p>
-            </div>
-
-            <h2 class="govbb-text-h2">How long does it take?</h2>
-            <p class="govbb-text-body">It takes about 3 minutes.</p>
-
-            <h2 class="govbb-text-h2">What you will need</h2>
-            <p class="govbb-text-body">Before you start, make sure you know:</p>
-            <ol class="govbb-list govbb-list--number">
-              <li>Why you lost your job.</li>
-              <li>How many complete years you worked for your employer.</li>
-              <li>Your usual pay each week, or each month.</li>
-            </ol>
-
-            <p>
-              <a
-              class="govbb-btn"
-              href="#q-reason"
-              onclick="
-                go('q-reason');
-                return false;
-              "
-              data-start-link
-              >Start</a
-            >
-            </p>
-            
           </div>
         </div>
       </section>
@@ -466,7 +425,7 @@
               <button
                 class="govbb-btn--secondary"
                 type="button"
-                onclick="go('start')"
+                onclick="go('guide')"
               >
                 Previous
               </button>
@@ -769,7 +728,6 @@
 
       var titles = {
         guide: "Calculate your severance pay — The Government of Barbados",
-        start: "Before you start — The Government of Barbados",
         "q-reason": "Why did you lose your job? — The Government of Barbados",
         "q-years":
           "How many complete years did you work there? — The Government of Barbados",
@@ -865,6 +823,15 @@
           return false;
         }
         state.reason = checked.value;
+        if (
+          state.reason === "misconduct" ||
+          state.reason === "refused" ||
+          state.reason === "other"
+        ) {
+          // Stop early for reasons this tool can't estimate.
+          finish();
+          return false;
+        }
         go("q-years");
         return false;
       }
