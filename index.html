@@ -474,14 +474,26 @@
               <h1 class="govbb-text-h1">
                 How many complete years did you work there?
               </h1>
-              <p class="govbb-text-body">
-                Count only complete years. Do not count extra months on top of
-                your last full year.
-              </p>
+              <ul class="govbb-list">
+                <li>
+                  Count only complete years. Do not count extra months on top of
+                  your last full year.
+                </li>
+                <li>
+                  You need at least <strong>2 years</strong> to qualify for any
+                  payment.
+                </li>
+                <li>
+                  The law counts a maximum of <strong>33 years</strong>. Years
+                  above 33 do not add to your payment.
+                </li>
+              </ul>
             </div>
             <div class="govbb-form-group" id="fg-years">
-              <label class="govbb-label" for="years">Complete years <span style="color: var(--color-error)" aria-hidden="true">*</span></label>
-              <p class="govbb-hint" id="years-hint">For example, 7</p>
+              <label class="govbb-label" for="years">Complete years<span style="color: var(--color-error)" aria-hidden="true">*</span></label>
+              <p class="govbb-hint" id="years-hint">
+                For example, 7
+              </p>
               <p
                 class="govbb-error-message"
                 id="years-error"
@@ -843,7 +855,7 @@
         if (raw === "" || !Number.isFinite(n))
           msg = "Enter the number of complete years";
         else if (n < 0 || n > 60) msg = "Enter a number between 0 and 60";
-        if (msg) {
+                if (msg) {
           showInlineError("years-error", "years", msg);
           showErrorSummary("error-summary-years", [
             { target: "years", message: msg },
