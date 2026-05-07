@@ -324,7 +324,7 @@
               <span class="form-page__service-title govbb-text-body"
                 >Calculate your severance pay</span
               >
-              <h1 class="govbb-text-h1">Why did your job end?</h1>
+              <h1 class="govbb-text-h1">Why did your job end? <span style="color: var(--color-error)" aria-hidden="true">*</span></h1>
             </div>
             <div class="govbb-form-group" id="fg-reason">
               <fieldset class="govbb-fieldset govbb-form-group">
@@ -480,7 +480,7 @@
               </p>
             </div>
             <div class="govbb-form-group" id="fg-years">
-              <label class="govbb-label" for="years">Complete years</label>
+              <label class="govbb-label" for="years">Complete years <span style="color: var(--color-error)" aria-hidden="true">*</span></label>
               <p class="govbb-hint" id="years-hint">For example, 7</p>
               <p
                 class="govbb-error-message"
@@ -551,7 +551,7 @@
             </div>
             <div class="form-page__groups">
               <div class="govbb-form-group" id="fg-pay">
-                <label class="govbb-label" for="pay">Amount (BDS$)</label>
+                <label class="govbb-label" for="pay">Amount (BDS$) <span style="color: var(--color-error)" aria-hidden="true">*</span></label>
                 <p class="govbb-hint" id="pay-hint">For example, 1200.00</p>
                 <p
                   class="govbb-error-message"
@@ -575,7 +575,7 @@
               <div class="govbb-form-group" id="fg-period">
                 <fieldset class="govbb-fieldset govbb-form-group">
                   <legend class="govbb-fieldset__legend">
-                    When do you get paid?
+                    When do you get paid? <span style="color: var(--color-error)" aria-hidden="true">*</span>
                   </legend>
                   <p class="govbb-hint" id="period-hint">Choose one.</p>
                   <p
@@ -851,6 +851,10 @@
           return false;
         }
         state.years = n;
+        if (n < 2) {
+          finish();
+          return false;
+        }
         go("q-pay");
         return false;
       }
